@@ -7,7 +7,7 @@ import brcypt from "bcrypt"
 import { dot } from 'node:test/reporters';
 const app = express();
 app.use(cors({
-origin: 'http://example.com',
+origin: 'https://tic-tac-toe-mvp-8lg6.vercel.app',
 methods: ["GET","HEAD","PUT","PATCH","POST","DELETE"],
 credentials: true
 }
