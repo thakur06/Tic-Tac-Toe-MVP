@@ -58,7 +58,7 @@ app.post("/signin", async (req, res) => {
     }
 })
 app.get("/",(req,res)=>{
-    res.send("hi vercel");
+    res.send("hi vercel cors not working");
 })
 app.listen(8000, () => {
     console.log("running on 8000")
