@@ -35,7 +35,7 @@ export function Login({auth}) {
     const [name, setname] = useState("");
   const [password, setpassword] = useState("")
   const login = () => {
-    Axios.post("http://localhost:8000/login", {name,password }).then(res => {
+    Axios.post("https://tic-tac-toe-mvp.vercel.app/login", {name,password }).then(res => {
       console.log(res)
         cookie.set("token", res.data.token);
         cookie.set("Fname", res.data.Fname);
