@@ -6,7 +6,12 @@ import dotenv from 'dotenv';
 import brcypt from "bcrypt"
 import { dot } from 'node:test/reporters';
 const app = express();
-app.use(cors());
+app.use(cors({
+origin: 'http://example.com',
+methods: ["GET","HEAD","PUT","PATCH","POST","DELETE"],
+credentials: true
+}
+    ));
 app.use(express.json());
 dotenv.config();
 const api_key =     process.env.API_key;
