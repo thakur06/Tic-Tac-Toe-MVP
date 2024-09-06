@@ -35,7 +35,7 @@ export function Login({auth}) {
     const [name, setname] = useState("");
   const [password, setpassword] = useState("")
   const login = async() => {
-    await Axios.post("https://tic-tactoe-server.onrender.com/login", {name,password }).then(res => {
+    await Axios.post("https://tic-tac-toe-mvp.vercel.app/login", {name,password }).then(res => {
       console.log(res)
         cookie.set("token", res.data.token);
         cookie.set("Fname", res.data.Fname);
