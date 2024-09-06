@@ -1,9 +1,9 @@
-import express from 'express';
-import cors from 'cors';
-import { StreamChat } from "stream-chat"
-import { v4 as uuidv4 } from "uuid"
-import dotenv from 'dotenv';
-import brcypt from "bcrypt"
+const express = require('express');
+const cors = require('cors');
+const { StreamChat } = require('stream-chat');
+const { v4: uuidv4 } = require('uuid');
+const dotenv = require('dotenv');
+const bcrypt = require('bcrypt');
 
 const app = express();
 const corsOptions = {
@@ -15,6 +15,7 @@ app.use(cors(corsOptions));
 
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 dotenv.config();
 const api_key = process.env.API_key;
 const api_secret = process.env.API_SECRET;
