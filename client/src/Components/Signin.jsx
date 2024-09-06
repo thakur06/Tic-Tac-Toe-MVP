@@ -16,8 +16,8 @@ export function Signin() {
     const navigate=useNavigate();
     const cookie = new Cookie();
 
-    const signin = () => {
-        Axios.post("http://localhost:8000/signin", { Fname, Lname, Uname, password }).then(res => {
+    const signin = async() => {
+        await Axios.post("http://localhost:8000/signin", { Fname, Lname, Uname, password }).then(res => {
             cookie.set("token", res.data.token);
             cookie.set("Fname", res.data.Fname);
             cookie.set("Lname", res.data.Lname);
