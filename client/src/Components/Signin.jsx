@@ -17,7 +17,7 @@ export function Signin() {
     const cookie = new Cookie();
 
     const signin = async() => {
-        await Axios.post("http://localhost:8000/signin", { Fname, Lname, Uname, password }).then(res => {
+        await Axios.post("https://tic-tac-toe-mvp.vercel.app/signin", { Fname, Lname, Uname, password }).then(res => {
             cookie.set("token", res.data.token);
             cookie.set("Fname", res.data.Fname);
             cookie.set("Lname", res.data.Lname);

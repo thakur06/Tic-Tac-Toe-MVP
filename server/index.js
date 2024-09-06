@@ -10,9 +10,9 @@ app.use(cors());
 app.options('*', cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const api_key=process.env.API_key;
+const api_key=process.env.API_KEY;
 const api_secret=process.env.API_SECRET;
-const connection = StreamChat.getInstance(api_key, api_secret);
+const connection = StreamChat.getInstance(api_key,api_secret);
 
 app.post("/signin", async(req, res) => {
     try {
@@ -32,7 +32,7 @@ app.post("/signin", async(req, res) => {
 app.post("/login", async(req, res) => {
     const { name, password } = req.body;
     try {
-        const { users } = await connection.queryUsers({ Uname: name });
+       const {users}=await connection.queryUsers({Uname:name})
 
         if (users.length == 0) return res.json({ message: "User not found" })
 
@@ -53,7 +53,8 @@ app.post("/login", async(req, res) => {
 
             res.status(401).send({ mgs: "User not found", status: 404 });
         }
-
+console.log(users)
+        res.send(users);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: "Internal Server Error" });
