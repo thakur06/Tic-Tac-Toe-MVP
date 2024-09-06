@@ -57,6 +57,9 @@ app.post("/signin", async (req, res) => {
         res.json(err);
     }
 })
+app.get("/",(req,res)=>{
+    res.send("hi vercel");
+})
 app.listen(8000, () => {
     console.log("running on 8000")
 })
