@@ -10,7 +10,7 @@ export const Navbar = () => {
       {/* Left section with logo and title */}
       <div className="flex flex-row font-display text-2xl items-center">
         <img src={logo} alt="Logo" className="h-12 w-12" />
-        <h1 className="ml-2">Tic Tac</h1>
+        <h1 className="ml-2"><Link to={"/"} >Tic Tac Toe</Link></h1>
       </div>
 
       {/* Hamburger menu button for small screens */}
@@ -67,15 +67,7 @@ export const Navbar = () => {
               Signin
             </Link>
           </li>
-          <li>
-            <Link
-              to="/"
-              className="text-gray-700 hover:bg-gray-200 px-4 py-2 w-40 text-center"
-              onClick={() => setIsOpen(false)}
-            >
-              Logout
-            </Link>
-          </li>
+
         </ul>
       </div>
     </div>

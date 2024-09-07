@@ -90,7 +90,7 @@ const name=client._user.Uname;
   })
 
   return (
-    <div className='flex flex-col justify-center items-center xxs:mx-auto md:mx-52'>
+    <div className='flex flex-col justify-center items-center '>
       <div className='flex flex-row justify-center items-center'>
         <Square clsx={"border-b-sky-200 border-b border-r border-r-sky-200"} val={board[0]} play={() => { play(0) }} />
         <Square clsx={"border-b-sky-200 border-b border-r border-r-sky-200"} val={board[1]} play={() => { play(1) }} />

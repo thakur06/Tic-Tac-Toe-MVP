@@ -5,8 +5,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    column-count: 2;
-    column-gap: 100px;
     border: 2px solid gray;
     
   }
@@ -15,7 +13,7 @@
    border: 2px solid gray;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-    padding: 5px;
+    padding: 2px;
     height: 300px;
     font-size: 10px;
     width: 300px;
@@ -28,14 +26,13 @@
   
   .str-chat__list ul {
     list-style-type: none;
-    margin: 5px;
+    margin: 2px;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
   }
   .str-chat__list li {
     list-style-type: none;
     color: black;
-    margin-top: 10px;
     border-radius: 6px;
     display: flex;
     align-items: center;
@@ -102,51 +99,11 @@
   }
   .str-chat__message-simple__actions__action--reactions {
     display: none;
-    align-items: center;
-    width: fit-content;
-    background: #ffffff;
-    border: 1px solid #e9e9ea;
-    box-sizing: border-box;
-    border-radius: 50vw;
-    padding: 6px 6px 4px 6px;
-    z-index: 3;
-    cursor: pointer;
+   
   }
   
   .str-chat__message-reactions-list {
-    display: flex;
     display: none;
   }
   
-  .str-chat__reaction-list--counter {
-    display: none;
-  }
-  .str-chat__reaction-list--reverse button {
-    margin-left: 10px;
-    border: none;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   
-  .str-chat__message-reactions-list-item {
-    margin-left: 10px;
-    border: none;
-    border-radius: 50vw;
-    width: 30px;
-    height: 30px;
-    display: none;
-  }
-  .str-chat__message-reactions-list-item span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
-    cursor: pointer;
-  }
-  
-  .emoji-mart-emoji-custom span {
-    height: 15px !important;
-    width: 15px !important;
-  }

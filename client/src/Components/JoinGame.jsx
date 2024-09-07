@@ -8,14 +8,15 @@ import { useChatContext,Channel } from 'stream-chat-react';
 import { Background } from './Background';
 import { Game } from './Game';
 import { CustomMessageInput } from './CustInput';
-import { TextWrite } from './TextWrite';
+import Cookie from "universal-cookie"
 export const JoinGame = ({logout}) => {
+  const cookie = new Cookie();
     const [opponent, setopponent] = useState("");
     const {client} = useChatContext();
     const [channel, setchannel] = useState("");
     const words = [
         {
-          text: "Enter",
+          text: "Enter    ",
         },
         
         {
@@ -38,9 +39,17 @@ const createChannel=async()=>{
     setchannel(newChannel);
     console.log(newChannel.cid);
 }
+const quit= async()=>{
+
+  await channel.stopWatching();
+ setchannel(null)
+
+}
+
     return (
    <div className='mt-10'>
-           {channel?<Channel channel={channel} Input={CustomMessageInput}> <Game channel={channel} logout={logout} rival={opponent} /></Channel>:<><div className="flex flex-col items-center justify-center   ">
+           {channel?<Channel channel={channel} Input={CustomMessageInput}> <Game channel={channel} logout={logout} rival={opponent} quit={quit} /></Channel>:<><div className="flex flex-col items-center justify-center   ">
+           <h1>hi {cookie.get("Fname")}</h1>
 
 <TypewriterEffectSmooth words={words} />
 <div
@@ -50,7 +59,7 @@ const createChannel=async()=>{
     className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
     Join Game
   </button>
-  <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm" onClick={logout}>
+  <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm" onClick={()=>{quit;logout}}>
           Logout
         </button>
 </div>

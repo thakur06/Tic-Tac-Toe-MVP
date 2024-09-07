@@ -11,7 +11,8 @@ module.exports = {
   darkMode: "class",
   theme: {
     screens: {
-      'xxs': {'max': '400px'},
+      'xxs': {'max': '550px'},
+      'xxxs':{'max':"350px"},
       "xs":"400px",
       ...defaultTheme.screens,
     },
