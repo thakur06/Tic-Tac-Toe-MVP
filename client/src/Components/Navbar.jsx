@@ -28,18 +28,18 @@ export const Navbar = () => {
 
       {/* Right section with buttons (visible on medium and larger screens) */}
       <div className="hidden md:flex space-x-4">
-        <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+        <button className="relative inline-flex items-center justify-center p-0.5  overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-100 to-pink-700 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
           <Link
             to="/"
-            className="relative px-5 py-2.5 transition-all ease-in duration-75  dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+            className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-slate-200 font-rye dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
           >
             Login
           </Link>
         </button>
-        <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+        <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-700 to-pink-100 group-hover:from-cyan-500 group-hover:to-pink-100 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
           <Link
             to="/signin"
-            className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+            className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-slate-200 font-rye dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
           >
             Signin
           </Link>

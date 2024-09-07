@@ -10,15 +10,16 @@
   }
   
   .str-chat__list {
-   border: 2px solid gray;
+   border: 2px solid rgb(126, 8, 56);
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     padding: 2px;
     height: 300px;
     font-size: 10px;
     width: 300px;
+
     overflow: hidden;
-    background-color: #e9e9ea;
+    background-color: #f2b7ea;
     overflow-y: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -32,7 +33,7 @@
   }
   .str-chat__list li {
     list-style-type: none;
-    color: black;
+    color: #6a115e;
     border-radius: 6px;
     display: flex;
     align-items: center;
@@ -86,9 +87,11 @@
     width: 200px;
     height: 90px;
     border: none;
+    background-color: rgb(227, 195, 255);
     border-radius: 6px;
-    box-shadow: 0 0 0 1px black;
+    box-shadow: 0 0 0 1px rgb(138, 7, 106);
     padding: 10px;
+    color: #6a115e;
     font-size: 15px;
   }
   
@@ -96,6 +99,7 @@
     width: 100%;
     padding-left: 5px;
     margin-top: 5px;
+    
   }
   .str-chat__message-simple__actions__action--reactions {
     display: none;

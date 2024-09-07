@@ -2,10 +2,10 @@
 "use client";
 import { TypewriterEffectSmooth } from "../Containers/TextWrite";
 import React, { useState } from 'react'
-import { Label } from "../Containers/Label";
+
 import { Input } from "../Containers/Input";
 import { useChatContext,Channel } from 'stream-chat-react';
-import { Background } from './Background';
+
 import { Game } from './Game';
 import { CustomMessageInput } from './CustInput';
 import Cookie from "universal-cookie"
@@ -17,16 +17,16 @@ export const JoinGame = ({logout}) => {
     const [channel, setchannel] = useState("");
     const words = [
         {
-          text: "Enter    ",
+          text: "Enter ",
         },
         
         {
-          text: "your",
+          text: "your ",
         },
     
         {
           text: "Opponent Name.",
-          className: "text-red-700 dark:text-blue-500",
+          className: "text-red-700 ",
         },
       ];
     
@@ -49,9 +49,9 @@ console.log("logout")
 
     return (
       <BackgroundBeamsWithCollision>
-   <div className=''>
+   <div className='mt-32'>
            {channel?<Channel channel={channel} Input={CustomMessageInput}> <Game channel={channel} logout={logout} rival={opponent} quit={quit} /></Channel>:<><div className="flex flex-col items-center justify-center   ">
-           <h1 className="font-display font-bold text-4xl animate-bounce">Hi <span className="text-red-600">{cookie.get("Fname")}</span></h1>
+           <h1 className="font-display font-bold text-4xl animate-bounce">Hi <span className="text-red-600 capitalize">{cookie.get("Fname")}</span></h1>
 
 <TypewriterEffectSmooth words={words} />
 <div

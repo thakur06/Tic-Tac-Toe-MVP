@@ -23,14 +23,14 @@ export const Home = () => {
         Fname: cookie.get("Fname"),
         Lname: cookie.get("Lname"),
         hashedPassword: cookie.get("hashedPassword")
-        
-      }, token).then(() => {setisAuth(true)});
-    }else{
+
+      }, token).then(() => { setisAuth(true) });
+    } else {
       navigate("/")
     }
   }, [token]);
 
-  const logOut = async() => {
+  const logOut = async () => {
     console.log("logout")
     cookie.remove("token");
     cookie.remove("Fname");
@@ -43,7 +43,7 @@ export const Home = () => {
     navigate("/")
   }
   return (
-    <div><Chat client={client}><JoinGame logout={logOut}/></Chat>
+    <div><Chat client={client}><JoinGame logout={logOut} /></Chat>
     </div>
   )
 }

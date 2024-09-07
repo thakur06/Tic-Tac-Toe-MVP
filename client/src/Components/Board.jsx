@@ -3,10 +3,9 @@ import { Square } from './Square'
 import { Patterns } from '../GamePattern';
 import select from "../Utils/select.mp3"
 import { useChannelStateContext, useChatContext } from 'stream-chat-react';
-export const Board = ({result,setter,rival}) => {
+export const Board = ({result,setter,rival,turn,setturn}) => {
   const [board, setboard] = useState(["", "", "", "", "", "", "", "", ""]);
   const [player, setplayer] = useState("X");
-  const [turn, setturn] = useState("X");
   const { channel } = useChannelStateContext();
   const { client } = useChatContext();
   
@@ -92,22 +91,24 @@ const name=client._user.Uname;
   })
 
   return (
-    <div className='flex flex-col justify-center items-center xxs:mt-16 '>
+
+    <div className='flex flex-col justify-center items-center xxs:mt-10 '>
       <div className='flex flex-row justify-center items-center'>
-        <Square clsx={"border-b-sky-200 border-b border-r border-r-sky-200"} val={board[0]} play={() => { play(0) }} />
-        <Square clsx={"border-b-sky-200 border-b border-r border-r-sky-200"} val={board[1]} play={() => { play(1) }} />
-        <Square clsx={"border-b-sky-200 border-b "} val={board[2]} play={() => { play(2) }} />
+        <Square clsx={"border-b-pink-900 border-b border-r border-r-pink-900 border-r-8"} val={board[0]} play={() => { play(0) }} />
+        <Square clsx={"border-b-pink-900 border-b border-r border-r-pink-900 border-r-8"} val={board[1]} play={() => { play(1) }} />
+        <Square clsx={"border-b-pink-900 border-b "} val={board[2]} play={() => { play(2) }} />
 
       </div>
       <div className='flex flex-row justify-center items-center'>
-        <Square clsx={"border-b-sky-200 border-t-sky-200 border-b  border-t border-r border-r-sky-200"} val={board[3]} play={() => { play(3) }} />
-        <Square clsx={"border-b-sky-200 border-t-sky-200 border-b  border-t border-r border-r-sky-200"} val={board[4]} play={() => { play(4) }} />
-        <Square clsx={"border-b-sky-200 border-t-sky-200 border-b  border-t "} val={board[5]} play={() => { play(5) }} />
+        <Square clsx={"border-b-pink-900 border-t-pink-900 border-t-8 border-b  border-t border-r border-r-pink-900 border-r-8"} val={board[3]} play={() => { play(3) }} />
+        <Square clsx={"border-b-pink-900 border-t-pink-900 border-t-8 border-b  border-t border-r border-r-pink-900 border-r-8"} val={board[4]} play={() => { play(4) }} />
+        <Square clsx={"border-b-pink-900 border-t-pink-900 border-t-8 border-b  border-t "} val={board[5]} play={() => { play(5) }} />
       </div><div className='flex flex-row justify-center items-center'>
-        <Square clsx={"border-t-sky-200 border-t  border-r border-r-sky-200 "} val={board[6]} play={() => { play(6) }} />
-        <Square clsx={"border-t-sky-200 border-t  border-r border-r-sky-200 "} val={board[7]} play={() => { play(7) }} />
-        <Square clsx={"border-t-sky-200 border-t   "} val={board[8]} play={() => { play(8) }} />
+        <Square clsx={"border-t-pink-900 border-t-8 border-t  border-r border-r-pink-900 border-r-8 "} val={board[6]} play={() => { play(6) }} />
+        <Square clsx={"border-t-pink-900 border-t-8 border-t  border-r border-r-pink-900 border-r-8 "} val={board[7]} play={() => { play(7) }} />
+        <Square clsx={"border-t-pink-900 border-t-8 border-t   "} val={board[8]} play={() => { play(8) }} />
       </div>
     </div>
+
   )
 }

@@ -18,6 +18,7 @@ module.exports = {
     },
     fontFamily: {
       display: ["Satisfy", "cursive"],
+      rye:["Rye","cursive"]
     },
     extend: {
       boxShadow: {

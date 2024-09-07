@@ -34,37 +34,37 @@ export function Signin() {
     };
     return (
         (<div
-            className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-2xl shadow-green-700 bg-transparent text-slate-200">
-            <h2 className="font-bold text-xl dark:text-neutral-200">
+            className="max-w-md text-center w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8  bg-transparent text-slate-200">
+            <h2 className="font-bold text-xl text-pink-950">
                 Tic Tac Toe -MVP
             </h2>
-            <p className="text-sm max-w-sm mt-2 dark:text-neutral-300">
-                Create you account now !
+            <p className="text-sm max-w-sm mt-2 text-pink-900">
+                Create you account now & start playing now
             </p>
             <form className="my-8" onSubmit={handleSubmit}>
                 <div
                     className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
                     <LabelInputContainer>
-                        <Label htmlFor="firstname">First name</Label>
+                        <Label htmlFor="firstname" className="text-pink-800">First name</Label>
                         <Input id="firstname" placeholder="Tyler" type="text" func={setFname} />
                     </LabelInputContainer>
                     <LabelInputContainer>
-                        <Label htmlFor="lastname">Last name</Label>
+                        <Label htmlFor="lastname" className="text-pink-800">Last name</Label>
                         <Input id="lastname" placeholder="Durden" type="text" func={setLname} />
                     </LabelInputContainer>
                 </div>
                 <LabelInputContainer className="mb-4">
-                    <Label htmlFor="username">Username</Label>
+                    <Label htmlFor="username" className="text-pink-800">Username</Label>
                     <Input id="username" placeholder="KingSlayer" type="text" func={setUname} />
                 </LabelInputContainer>
                 <LabelInputContainer className="mb-4">
-                    <Label htmlFor="password">Password</Label>
+                    <Label htmlFor="password" className="text-pink-800">Password</Label>
                     <Input id="password" placeholder="••••••••" type="password" func={setpassword} />
                 </LabelInputContainer>
 
 
                 <button
-                    className="bg-gradient-to-br relative group/btn from-teal-300 via-green-500 to-emerald-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+                    className="border border-pink-950 bg-pink-800 w-full text-white rounded-md h-10 font-medium"
                     type="submit">
                     Sign up &rarr;
                     <BottomGradient />
