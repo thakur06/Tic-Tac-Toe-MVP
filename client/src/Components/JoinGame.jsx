@@ -9,6 +9,7 @@ import { Background } from './Background';
 import { Game } from './Game';
 import { CustomMessageInput } from './CustInput';
 import Cookie from "universal-cookie"
+import { BackgroundBeamsWithCollision } from "../Containers/Background";
 export const JoinGame = ({logout}) => {
   const cookie = new Cookie();
     const [opponent, setopponent] = useState("");
@@ -47,16 +48,17 @@ console.log("logout")
 }
 
     return (
-   <div className='mt-10'>
+      <BackgroundBeamsWithCollision>
+   <div className=''>
            {channel?<Channel channel={channel} Input={CustomMessageInput}> <Game channel={channel} logout={logout} rival={opponent} quit={quit} /></Channel>:<><div className="flex flex-col items-center justify-center   ">
-           <h1>hi {cookie.get("Fname")}</h1>
+           <h1 className="font-display font-bold text-4xl animate-bounce">Hi <span className="text-red-600">{cookie.get("Fname")}</span></h1>
 
 <TypewriterEffectSmooth words={words} />
 <div
-  className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
+  className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 xxs:justify-center xxs:items-center">
     <Input id="Rivvall" placeholder="Furiosa" type="text" func={setopponent} />
   <button onClick={createChannel}
-    className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
+    className="w-40 h-10 rounded-xl bg-violet-300 border  border-purple-700 text-white text-sm">
     Join Game
   </button>
   <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm" onClick={logout}>
@@ -67,5 +69,7 @@ console.log("logout")
            
             </>}
         </div>
+        
+        </BackgroundBeamsWithCollision>
     )
 }

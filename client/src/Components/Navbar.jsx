@@ -6,14 +6,14 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full h-16 flex flex-row md:p-10 xs:p-4 justify-between items-center shadow-md shadow-orange-400">
-      {/* Left section with logo and title */}
+    <div className="w-full h-16 flex flex-row md:p-10 xs:p-4 justify-between items-center shadow-md bg-pink-800 shadow-pink-500">
+      
       <div className="flex flex-row font-display text-2xl items-center">
         <img src={logo} alt="Logo" className="h-12 w-12" />
         <h1 className="ml-2"><Link to={"/"} >Tic Tac Toe</Link></h1>
       </div>
 
-      {/* Hamburger menu button for small screens */}
+      
       <div className="md:hidden">
         <button
           className="text-gray-500 focus:outline-none"
@@ -47,12 +47,12 @@ export const Navbar = () => {
       </div>
 
       {/* Dropdown menu (visible on small screens) */}
-      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} absolute top-16 right-0  hover:text-orange-500 rounded-md shadow-2xl shadow-orange-300`}>
+      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} absolute top-16 right-0 text-white bg-pink-800 rounded-md shadow-2xl shadow-pink-900`}>
         <ul className="flex flex-col items-center space-y-2 py-4">
           <li>
             <Link
               to="/"
-              className="text-gray-700 hover:bg-gray-200 px-4 py-2 w-40 text-center"
+              className=" px-4 py-2 w-40 text-center"
               onClick={() => setIsOpen(false)}
             >
               Login
@@ -61,7 +61,7 @@ export const Navbar = () => {
           <li>
             <Link
               to="/signin"
-              className="text-gray-700 hover:bg-gray-200 px-4 py-2 w-50 text-center"
+              className="px-4 py-2 w-50 text-center"
               onClick={() => setIsOpen(false)}
             >
               Signin

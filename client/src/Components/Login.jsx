@@ -57,7 +57,7 @@ const handleSubmit = (e) => {
 };
   return (
     (<div
-      className=" max-w-md w-full mx-auto rounded-lg  md:rounded-2xl p-4 md:p-8 shadow-input bg-transparent dark:bg-black">
+      className=" max-w-md w-full mx-auto rounded-lg  md:rounded-2xl p-4 md:p-8  shadow-pink-500 shadow-xl bg-transparent dark:bg-black">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Welcome to Aceternity
       </h2>

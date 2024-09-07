@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { Square } from './Square'
 import { Patterns } from '../GamePattern';
+import select from "../Utils/select.mp3"
 import { useChannelStateContext, useChatContext } from 'stream-chat-react';
 export const Board = ({result,setter,rival}) => {
   const [board, setboard] = useState(["", "", "", "", "", "", "", "", ""]);
@@ -8,13 +9,14 @@ export const Board = ({result,setter,rival}) => {
   const [turn, setturn] = useState("X");
   const { channel } = useChannelStateContext();
   const { client } = useChatContext();
+  
 const [pname, setpname] = useState("")
 
   const play = async (idx) => {
     if (board[idx] === "" && turn == player) {
       
       turn === "X" ? setturn("O") : setturn("X");
-     
+      new Audio(select).play();
 const name=client._user.Uname;
       await channel.sendEvent({
         type: "turn",
@@ -90,7 +92,7 @@ const name=client._user.Uname;
   })
 
   return (
-    <div className='flex flex-col justify-center items-center '>
+    <div className='flex flex-col justify-center items-center xxs:mt-16 '>
       <div className='flex flex-row justify-center items-center'>
         <Square clsx={"border-b-sky-200 border-b border-r border-r-sky-200"} val={board[0]} play={() => { play(0) }} />
         <Square clsx={"border-b-sky-200 border-b border-r border-r-sky-200"} val={board[1]} play={() => { play(1) }} />
