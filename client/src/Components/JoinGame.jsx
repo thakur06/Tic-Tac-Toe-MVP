@@ -40,7 +40,7 @@ const createChannel=async()=>{
     console.log(newChannel.cid);
 }
 const quit= async()=>{
-
+console.log("logout")
   await channel.stopWatching();
  setchannel(null)
 
@@ -59,7 +59,7 @@ const quit= async()=>{
     className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
     Join Game
   </button>
-  <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm" onClick={()=>{quit;logout}}>
+  <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm" onClick={logout}>
           Logout
         </button>
 </div>
