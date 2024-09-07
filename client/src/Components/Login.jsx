@@ -45,6 +45,7 @@ export function Login({auth}) {
         cookie.set("Lname", res.data.Lname);
         cookie.set("Uname", res.data.Uname);
         cookie.set("uId", res.data.uId);
+        cookie.set("hashedPassword", res.data.hashedPassword);
         navigate("/home")
     }
     ).catch(err => console.log(err));
@@ -56,7 +57,7 @@ const handleSubmit = (e) => {
 };
   return (
     (<div
-      className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+      className=" max-w-md w-full mx-auto rounded-lg  md:rounded-2xl p-4 md:p-8 shadow-input bg-transparent dark:bg-black">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Welcome to Aceternity
       </h2>

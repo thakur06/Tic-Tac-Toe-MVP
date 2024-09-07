@@ -46,15 +46,16 @@ app.post("/login", async(req, res) => {
                 Fname: users[0].Fname,
                 Lname: users[0].Lname,
                 Uname: users[0].Uname,
-                uId: users[0].id
+                uId: users[0].id,
+                hashedPassword:users[0].hashedPassword
             })
         }
         else {
 
             res.status(401).send({ mgs: "User not found", status: 404 });
         }
-console.log(users)
-        res.send(users);
+
+
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: "Internal Server Error" });

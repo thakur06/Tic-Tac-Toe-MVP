@@ -1,3 +1,6 @@
+
+"use client";
+import { TypewriterEffectSmooth } from "../Containers/TextWrite";
 import React, { useState } from 'react'
 import { Label } from "../Containers/Label";
 import { Input } from "../Containers/Input";
@@ -5,11 +8,26 @@ import { useChatContext,Channel } from 'stream-chat-react';
 import { Background } from './Background';
 import { Game } from './Game';
 import { CustomMessageInput } from './CustInput';
-export const JoinGame = () => {
+import { TextWrite } from './TextWrite';
+export const JoinGame = ({logout}) => {
     const [opponent, setopponent] = useState("");
     const {client} = useChatContext();
-    const [channel, setchannel] = useState("")
-    const destroy =async ()=> await channel.delete();
+    const [channel, setchannel] = useState("");
+    const words = [
+        {
+          text: "Enter",
+        },
+        
+        {
+          text: "your",
+        },
+    
+        {
+          text: "Opponent Name.",
+          className: "text-red-700 dark:text-blue-500",
+        },
+      ];
+    
 const createChannel=async()=>{
     const rival=await client.queryUsers({ Uname: { $eq: opponent } });
     console.log(rival)
@@ -17,13 +35,28 @@ const createChannel=async()=>{
 
     const newChannel= client.channel("messaging",{members:[client.userID,rival.users[0].id ]});
     await newChannel.watch();
-    setchannel(newChannel)
+    setchannel(newChannel);
+    console.log(newChannel.cid);
 }
     return (
-   <>
-           {channel?<Channel channel={channel} Input={CustomMessageInput}> <Game channel={channel}  rival={opponent} destroy={destroy}/></Channel>:<><Label htmlFor="Rival">Rival</Label>
-            <Input id="Rivvall" placeholder="Furiosa" type="text" func={setopponent} />
-            <button onClick={createChannel}>Join Game</button></>}
-        </>
+   <div className='mt-10'>
+           {channel?<Channel channel={channel} Input={CustomMessageInput}> <Game channel={channel} logout={logout} rival={opponent} /></Channel>:<><div className="flex flex-col items-center justify-center   ">
+
+<TypewriterEffectSmooth words={words} />
+<div
+  className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
+    <Input id="Rivvall" placeholder="Furiosa" type="text" func={setopponent} />
+  <button onClick={createChannel}
+    className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
+    Join Game
+  </button>
+  <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm" onClick={logout}>
+          Logout
+        </button>
+</div>
+</div>
+           
+            </>}
+        </div>
     )
 }

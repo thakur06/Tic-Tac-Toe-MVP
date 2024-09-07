@@ -90,17 +90,18 @@ const name=client._user.Uname;
   })
 
   return (
-    <div className='flex flex-col p-28 '>
-      <div className='flex flex-row '>
+    <div className='flex flex-col justify-center items-center xxs:mx-auto md:mx-52'>
+      <div className='flex flex-row justify-center items-center'>
         <Square clsx={"border-b-sky-200 border-b border-r border-r-sky-200"} val={board[0]} play={() => { play(0) }} />
         <Square clsx={"border-b-sky-200 border-b border-r border-r-sky-200"} val={board[1]} play={() => { play(1) }} />
         <Square clsx={"border-b-sky-200 border-b "} val={board[2]} play={() => { play(2) }} />
+
       </div>
-      <div className='flex flex-row '>
+      <div className='flex flex-row justify-center items-center'>
         <Square clsx={"border-b-sky-200 border-t-sky-200 border-b  border-t border-r border-r-sky-200"} val={board[3]} play={() => { play(3) }} />
         <Square clsx={"border-b-sky-200 border-t-sky-200 border-b  border-t border-r border-r-sky-200"} val={board[4]} play={() => { play(4) }} />
         <Square clsx={"border-b-sky-200 border-t-sky-200 border-b  border-t "} val={board[5]} play={() => { play(5) }} />
-      </div><div className='flex flex-row '>
+      </div><div className='flex flex-row justify-center items-center'>
         <Square clsx={"border-t-sky-200 border-t  border-r border-r-sky-200 "} val={board[6]} play={() => { play(6) }} />
         <Square clsx={"border-t-sky-200 border-t  border-r border-r-sky-200 "} val={board[7]} play={() => { play(7) }} />
         <Square clsx={"border-t-sky-200 border-t   "} val={board[8]} play={() => { play(8) }} />

@@ -10,6 +10,11 @@ module.exports = {
   content: ["./src/**/*.{ts,tsx,jsx,js}"],
   darkMode: "class",
   theme: {
+    screens: {
+      'xxs': {'max': '400px'},
+      "xs":"400px",
+      ...defaultTheme.screens,
+    },
     fontFamily: {
       display: ["Satisfy", "cursive"],
     },
